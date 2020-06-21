@@ -1,0 +1,109 @@
+<body>
+<div id="wrapper">
+  <div class="wrapper-top"></div>
+  <div class="wrapper-mid">
+    <!-- Begin Paper -->
+    <div id="paper">
+      <div class="paper-top"></div>
+      <div id="paper-mid">
+        <div class="entry">
+          <!-- Begin Image -->
+          <img class="portrait" src="{{imgroot}}/{{profiledata && profiledata.profilepic}}" alt="John Smith" />
+          <!-- End Image -->
+          <!-- Begin Personal Information -->
+          <div class="self">
+            <h1 class="name">{{profiledata && profiledata.name}} {{profiledata && profiledata.lastname}} <br />
+              <span>{{profiledata && profiledata.designation}}</span></h1>
+            <ul>
+              <li class="ad">{{profiledata && profiledata.address}},Ta:-{{profiledata && profiledata.city}},Dist:-{{profiledata && profiledata.district}},{{profiledata && profiledata.country}}-{{profiledata && profiledata.postalcode}}</li>
+
+              <li class="mail">{{profiledata && profiledata.email}}</li>
+              <li class="tel">{{profiledata && profiledata.phoneno}}</li>
+              <li class="web" style="display: none;">www.businessweb.com</li>
+            </ul>
+          </div>
+          <!-- End Personal Information -->
+          <!-- Begin Social -->
+          <div class="social">
+            <ul>
+              <li><a class='north tmpdisnone' href="#" title="Download .pdf"><img src="assets/images/icn-save.jpg" alt="Download the pdf version" /></a></li>
+              <li><a class='north' href="javascript:window.print()" title="Print"><img src="assets/images/icn-print.jpg" alt="" /></a></li>
+              <li><a class='north tmpdisnone' id="contact" href="contact/index.html" title="Contact Me"><img src="assets/images/icn-contact.jpg" alt="" /></a></li>
+              <li><a class='north tmpdisnone' href="#" title="Follow me on Twitter"><img src="assets/images/icn-twitter.jpg" alt="" /></a></li>
+              <li><a class='north tmpdisnone' href="#" title="My Facebook Profile"><img src="assets/images/icn-facebook.jpg" alt="" /></a></li>
+            </ul>
+          </div>
+          <!-- End Social -->
+        </div>
+        <!-- Begin 1st Row -->
+        <div class="entry">
+          <h2>PERSONAL INFORMATION</h2>
+          <div class="content">
+            <h3>Date of Brith</h3>
+            <p>{{profiledata && profiledata.bod}}</p>
+          </div>
+        </div>
+        <!-- End 1st Row -->
+        <!-- Begin 2nd Row -->
+        <div class="entry">
+          <h2>EDUCATION</h2>
+          <div class="content">
+            <h3>{{educationdata && educationdata.joinyearmonth}}-{{educationdata && educationdata.passyearmonth}}</h3>
+            <p>{{educationdata && educationdata.schoolclg}},{{educationdata && educationdata.unibord}}<br />
+              <em>{{educationdata && educationdata.title}}</em></p>
+          </div>
+        </div>
+        <!-- End 2nd Row -->
+        <!-- Begin 3rd Row -->
+        <div class="entry">
+          <h2>PARENTS</h2>
+          <div class="content">
+            <h3>Father</h3>
+            <p>{{familydata && familydata.father}} {{familydata && familydata.fathername}} {{familydata && familydata.fatherlastname}}<br />
+              <em>{{familydata && familydata.fatheroccupation}}</em></p>
+          </div>
+          <div class="content">
+            <h3>Mother</h3>
+            <p>{{familydata && familydata.mother}} {{familydata && familydata.father}} {{familydata && familydata.motherlastname}}<br />
+              <em>{{familydata && familydata.motheroccupation}}</em></p>
+          </div>
+
+          <div class="content">
+            <h3>Sibling</h3>
+              <p  *ngFor="let sbldata of familydata.siblings let i = index">{{sbldata.sibling}} {{sbldata.siblingname}} {{sbldata.siblinglastname}}<br />
+                <em *ngIf="sbldata.siblinggender =='Female'">Sister</em>
+                <em *ngIf="sbldata.siblinggender =='Male'">Brother</em>
+              </p>
+          </div>
+
+          <div class="content">
+            <h3>Maternal</h3>
+            <p>{{familydata && familydata.maternal}} {{familydata && familydata.maternalname}} {{familydata && familydata.maternallastname}}<br /></p>
+            <ul class="info">
+              <li>{{familydata && familydata.maternaladdress}} </li>
+            </ul>
+          </div>
+        </div>
+        <!-- End 3rd Row -->
+        <!-- Begin 4th Row -->
+       
+        <!-- End 4th Row -->
+         <!-- Begin 5th Row -->
+       
+        <div class="entry" *ngIf="imgnotfornd">
+        <h2>Images</h2>
+          <ul class="works" >
+            <li *ngFor="let imgdata of imageData let i = index"><img src="{{imgroot}}/{{imgdata.profilepic}}" alt="" (click)="open(i)" /></li>
+          </ul>
+        </div>
+        <!-- Begin 5th Row -->
+      </div>
+      <div class="clear"></div>
+      <div class="paper-bottom"></div>
+    </div>
+    <!-- End Paper -->
+  </div>
+  <div class="wrapper-bottom"></div>
+</div>
+<!-- End Wrapper -->
+</body>
