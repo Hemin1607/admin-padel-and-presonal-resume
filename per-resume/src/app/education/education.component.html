@@ -1,0 +1,24 @@
+ <div class="container desc">
+      <div class="row">
+
+        <div class="col-lg-2 col-lg-offset-1">
+          <h5>EDUCATION</h5>
+        </div>
+
+        <div *ngFor="let edudata of educationdata; let i = index">
+          <div class="col-lg-6 " [ngClass]="{'col-lg-offset-3' : i != 0}">
+            <p>
+              <span class="tdesc"> {{edudata.title}}</span><br/> {{edudata.schoolclg}}<br/>
+              <i>{{edudata.unibord}}</i>
+            </p>
+          </div>
+          <div class="col-lg-3">
+            <p>
+              {{edudata.joinyearmonth}}-{{edudata.passyearmonth}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <hr>
+    </div>

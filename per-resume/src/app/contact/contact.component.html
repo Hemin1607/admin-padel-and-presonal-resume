@@ -1,0 +1,70 @@
+<div id="footwrap">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-2">
+            <h5>CONTACT</h5>
+          </div>
+          <div class="col-lg-4">
+            <p>
+               Email<br/> {{profiledata && profiledata.email}} <br/>
+            </p>
+            <p>
+              Adress<br/>{{profiledata && profiledata.address}}, <br/>Ta:-{{profiledata && profiledata.city}}, <br/> Dist:-{{profiledata && profiledata.district}} <br/> {{profiledata && profiledata.country}}-{{profiledata && profiledata.postalcode}}<br/>
+            </p>
+            <p>
+             Phone<br/>{{profiledata && profiledata.phoneno}}<br/>
+            </p>
+            <p style="display: none;">
+              Social Links<br/>
+              <a href="#"><i class="fa fa-dribbble"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+              <a href="#"><i class="fa fa-apple"></i></a>
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <p>
+              CONTACT FORM
+            </p>
+            <form class="contact-form php-mail-form" role="form"  [formGroup]="contactFormGroup">
+
+              <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" formControlName="name" data-msg="Please enter at least 4 chars"  [ngClass]="{ 'border-error-input' : submitted && f.name.errors && f.name.errors.required}">
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Your Email</label>
+                <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" formControlName="email" data-msg="Please enter a valid email"  [ngClass]="{ 'border-error-input' : submitted && f.email.errors && (f.email.errors.required || f.email.errors.email)}">
+                <div class="validate"></div>
+              </div>
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" data-rule="minlen:4" formControlName="subject" data-msg="Please enter at least 8 chars of subject"  [ngClass]="{ 'border-error-input' : submitted && f.subject.errors && f.subject.errors.required}">
+                <div class="validate"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Your Message</label>
+                <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" formControlName="message" data-msg="Please write something for us"  [ngClass]="{ 'border-error-input' : submitted && f.message.errors && f.message.errors.required}"></textarea>
+                <div class="validate"></div>
+              </div>
+
+              <div class="loading"></div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <div class="form-send">
+                <button type="submit" (click)="onSubmit()"  class="btn btn-large">Send Message</button>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+        <!--/.row -->
+      </div>
+      <!--/.container -->
+    </div>

@@ -1,0 +1,95 @@
+<div class=" content">
+	<div class=" row">
+		<form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+		  <div class=" col-md-12">
+				<div class=" card">
+				    <div class=" card-header"><h5 class=" title">Work Experience Profile</h5> </div>
+				    <div class=" card-body">
+				    	<div class=" col-md-12"  *ngFor="let ticket of t.controls; let i = index">
+				    		<div class=" card-header"></div>
+				    		<div class=" card-body" [formGroup]="ticket">
+				    			<div class=" row">
+				    				<!-- -->
+					    			<div class=" col-md-4 pr-md-1">
+					    				<div class=" form-group">
+							              <label> Work place name </label>
+							              <input
+							              class=" form-control"
+							              	formControlName="placename"
+							              	[ngClass]="{ 'border-error-input' : submitted && ticket.controls.placename.errors && ticket.controls.placename.errors.required }"
+							              />
+					    				</div>
+					    			</div>
+					    			<div class=" col-md-4 pr-md-1">
+					    				<div class=" form-group">
+							              <label> Designation </label>
+							              <input
+							              class=" form-control"
+							              formControlName="designation"
+							              [ngClass]="{ 'border-error-input' : submitted && ticket.controls.designation.errors && ticket.controls.designation.errors.required }"
+							              />
+					    				</div>
+					    			
+					    			</div>
+
+					    			<div class=" col-md-2 pr-md-1">
+					    				<div class=" form-group">
+							              <label> Join Year-Month </label>
+							              <input
+							              class=" form-control"
+							              formControlName="joinyearmonth"
+							              [ngClass]="{ 'border-error-input' : submitted && ticket.controls.joinyearmonth.errors && ticket.controls.joinyearmonth.errors.required }"
+							              />
+					    				</div>
+					    			</div>
+					    			<div class=" col-md-2 pr-md-1">
+					    				<div class=" form-group">
+							              <label> Leave Year-Month </label>
+							              <input
+							              class=" form-control"
+							              formControlName="leaveyearmonth"
+							              [ngClass]="{ 'border-error-input' : submitted && ticket.controls.leaveyearmonth.errors && ticket.controls.leaveyearmonth.errors.required }"
+							              />
+					    				</div>
+					    			</div>
+					    		</div>
+					    		<div class=" row">
+
+					    			<div class=" col-md-5 pr-md-1">
+					    				<div class=" form-group">
+							              <label> Contact </label>
+							              <textarea rows="4" cols="50"  class="form-control cust-textarea" formControlName="contact">
+											</textarea>
+					    				</div>
+					    			</div>
+					    			
+					    			<div class=" col-md-5 pr-md-1">
+					    				<div class=" form-group">
+							              <label> About </label>
+							               <textarea rows="4" cols="50"  class=" form-control cust-textarea"
+							               formControlName="about"
+							              [ngClass]="{ 'border-error-textarea' : submitted && ticket.controls.about.errors && ticket.controls.about.errors.required }">
+											
+											</textarea>
+							             
+					    				</div>
+					    			</div>
+					    			 <div class=" col-md-1 pr-md-1">
+					    				<div class=" form-group" >
+							            	 <button (click)="removeFormArray(i)" class="btn btn-light cust-btn-remove"><i class="tim-icons icon-simple-remove"></i></button>
+					    				</div>
+					    			</div>
+					    		</div>
+							</div>
+						</div>
+						<!-- button -->
+						<div class=" card-footer">
+							<button  class=" btn btn-fill btn-success" (click)="addFormArray()">Add Work Experience</button>
+					      <button type="submit" class=" btn btn-fill btn-danger" type="submit">Save Work Experience</button>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

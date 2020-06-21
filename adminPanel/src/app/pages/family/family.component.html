@@ -1,0 +1,252 @@
+<div class=" content">
+	<div class=" row">
+		<div class=" col-md-12">
+		  <div class=" card">
+		    <div class=" card-header"><h5 class=" title">Family Information</h5></div>
+		    <div class=" card-body">
+				<form [formGroup]="dynamicForm" >
+			      	<div class=" row">
+			          <div class=" col-md-3 pr-md-1">
+			            <div class=" form-group">
+			              <label>Father  Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder="First Name"
+			                type="text"
+			                formControlName="father"
+			                [ngClass]="{ 'border-error-input' : submitted && f.father.errors && f.father.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-3 pl-md-1">
+			            <div class=" form-group">
+			              <label> Middle Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder=" Name"
+			                type="text"
+			                formControlName="fathername"
+			                [ngClass]="{ 'border-error-input' : submitted && f.fathername.errors && f.fathername.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-3 pl-md-1">
+			            <div class=" form-group">
+			              <label> Last Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder="Last Name"
+			                type="text"
+			                formControlName="fatherlastname"
+			                [ngClass]="{ 'border-error-input' : submitted && f.fatherlastname.errors && f.fatherlastname.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-3 pl-md-1">
+			            <div class=" form-group">
+			              <label> Occupation </label>
+			              <input
+			                class=" form-control"
+			                placeholder="Occupation"
+			                type="text"
+			                formControlName="fatheroccupation"
+			                [ngClass]="{ 'border-error-input' : submitted && f.fatheroccupation.errors && f.fatheroccupation.errors.required}"
+			              />
+			            </div>
+			          </div>
+			        </div>
+			        <div class=" row">
+			          <div class=" col-md-3 pr-md-1">
+			            <div class=" form-group">
+			              <label>Mother  Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder="First Name"
+			                type="text"
+			                formControlName="mother"
+			                [ngClass]="{ 'border-error-input' : submitted && f.mother.errors && f.mother.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-3 pl-md-1">
+			            <div class=" form-group">
+			              <label>Middle  Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder=" Name"
+			                type="text"
+			                formControlName="mothername"
+			                [ngClass]="{ 'border-error-input' : submitted && f.mothername.errors && f.mothername.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-3 pl-md-1">
+			            <div class=" form-group">
+			              <label> Last Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder="Last Name"
+			                type="text"
+			                formControlName="motherlastname"
+			                [ngClass]="{ 'border-error-input' : submitted && f.motherlastname.errors && f.motherlastname.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-3 pl-md-1">
+			            <div class=" form-group">
+			              <label> Occupation </label>
+			              <input
+			                class=" form-control"
+			                placeholder="Occupation"
+			                type="text"
+			                formControlName="motheroccupation"
+			                [ngClass]="{ 'border-error-input' : submitted && f.motheroccupation.errors && f.motheroccupation.errors.required}"
+			              />
+			            </div>
+			          </div>
+			        </div>
+			        <p>Meternal Information</p>
+			        <div class=" row">
+
+			          <div class=" col-md-2 pr-md-1">
+
+			            <div class=" form-group">
+			              <label>Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder="First Name"
+			                type="text"
+			                formControlName="maternal"
+			                [ngClass]="{ 'border-error-input' : submitted && f.maternal.errors && f.maternal.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md- pl-md-1">
+			            <div class=" form-group">
+			              <label> Middle Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder=" Name"
+			                type="text"
+			                formControlName="maternalname"
+			                [ngClass]="{ 'border-error-input' : submitted && f.maternalname.errors && f.maternalname.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-2 pl-md-1">
+			            <div class=" form-group">
+			              <label> Last Name </label>
+			              <input
+			                class=" form-control"
+			                placeholder="Last Name"
+			                type="text"
+			                formControlName="maternallastname"
+			                [ngClass]="{ 'border-error-input' : submitted && f.maternallastname.errors && f.maternallastname.errors.required}"
+			              />
+			            </div>
+			          </div>
+			          <div class=" col-md-5 pl-md-1">
+			            <div class=" form-group">
+			              <label> Address </label>
+			             <textarea rows="2" cols="50"
+							  class="form-control cust-textarea"
+							  formControlName="maternaladdress"
+			                [ngClass]="{ 'border-error-textarea' : submitted && f.maternaladdress.errors && f.maternaladdress.errors.required}"
+							  ></textarea>
+			            </div>
+			          </div>
+			        </div>
+			        <p>Sibling Information</p>
+			        <div   *ngFor="let ticket of t.controls; let i = index">
+			        	<div class=" row" [formGroup]="ticket">
+				          <div class=" col-md-2 pr-md-1">
+				            <div class=" form-group">
+				              <label> Name </label>
+				              <input
+				                class=" form-control"
+				                placeholder="First Name"
+				                type="text"
+				                formControlName="sibling"
+								[ngClass]="{ 'border-error-input' : submitted && ticket.controls.sibling.errors && ticket.controls.sibling.errors.required }"
+				              />
+				            </div>
+				          </div>
+				          <div class=" col-md-2 pl-md-1">
+				            <div class=" form-group">
+				              <label>Middle  Name </label>
+				              <input
+				                class=" form-control"
+				                placeholder=" Name"
+				                type="text"
+				                formControlName="siblingname"
+								[ngClass]="{ 'border-error-input' : submitted && ticket.controls.siblingname.errors && ticket.controls.siblingname.errors.required }"
+				              />
+				            </div>
+				          </div>
+				          <div class=" col-md-2 pl-md-1">
+				            <div class=" form-group">
+				              <label> Last Name </label>
+				              <input
+				                class=" form-control"
+				                placeholder="Last Name"
+				                type="text"
+				                formControlName="siblinglastname"
+								[ngClass]="{ 'border-error-input' : submitted && ticket.controls.siblinglastname.errors && ticket.controls.siblinglastname.errors.required }"
+				              />
+				            </div>
+				          </div>
+				          <div class=" col-md-2 pl-md-1">
+				            <div class=" form-group">
+				              <label> Married </label>
+				              <input
+				                class=" form-control cust-check-box"
+				                placeholder="Occupation"
+				                type="checkbox"
+				                formControlName="siblingmarried"
+								[ngClass]="{ 'border-error-input' : submitted && ticket.controls.siblingmarried.errors && ticket.controls.siblingmarried.errors.required }"
+				              />
+				            </div>
+				          </div>
+				          <div class=" col-md-2 pl-md-1">
+				            <div class=" form-group">
+				              <label> Gender </label>
+				              <div class="row">
+					              <input
+					                class=" form-control cust-check-box"
+					                placeholder="Occupation"
+					                type="radio"
+					                name="siblinggender"
+					                value="Male"
+					                formControlName="siblinggender"
+									
+					              /><label> Male </label>
+					               <input
+					                class=" form-control cust-check-box"
+					                placeholder="Occupation"
+					                type="radio"
+					                name="siblinggender"
+					                formControlName="siblinggender"
+									value="Female"
+					              /><label> Female </label>
+					          </div>
+				            </div>
+				          </div>
+				          <div class=" col-md-1 pl-md-1">
+				            <div class=" form-group">
+				              <button  class="btn btn-fill btn-light cust-btn-remove" (click)="removeFormArray(i)"><i class="tim-icons icon-simple-remove"  ></i></button>
+				            </div>
+				          </div>
+				      	</div>
+			        </div>
+			    </form>
+			</div>
+			<div class=" card-footer">
+				<button  class=" btn btn-fill btn-success" (click)="addFormArray()">Add  Sibling</button>
+		      <button type="submit" class=" btn btn-fill btn-info" (click)="onSubmit()" type="submit">Save  Family</button>
+		    </div>
+		  </div>
+	    </div>
+	</div>
+</div>
+		
+	

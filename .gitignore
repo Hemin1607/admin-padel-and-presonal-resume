@@ -1,0 +1,8 @@
+adminPanel/node_modules
+AngularAPIAdmin/node_modules
+bio-data/node_modules
+per-resume/node_modules
+adminPanel/dist
+AngularAPIAdmin/dist
+bio-data/dist
+per-resume/dist

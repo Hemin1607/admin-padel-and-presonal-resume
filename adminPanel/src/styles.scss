@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+.error-msg{
+	color : red;
+}
+.dropdown-menu{
+	background: black !important;
+}
+.custom-select{
+	background: black !important;
+}
+
+.border-error-input{
+  border-color: red;
+}
+
+.cust-check-box{
+  width: 14% !important;
+  }    
+
+.cust-btn-remove{
+	margin-top: 31%;
+    margin-left: -5%;
+}
+ul.works {
+	margin:0;
+	padding:0;
+	margin-left:40px;
+	list-style-type: none;
+}
+
+ul.works li {
+	margin:0;
+	padding:0;
+	float:left;
+}
+
+ul.works li img {
+	padding:4px;
+	background-color:#fff;
+	width:95px;
+	height:95px;
+	border:1px solid #b7c9cc;
+	margin-right:20px;
+	margin-bottom:16px;
+}
+
+ul.works li img:hover {
+	border:1px solid #315a60;
+	cursor: pointer;
+}
+
+img.portrait {
+	
+	background-repeat: no-repeat;
+	width:109px;
+	height:109px;
+	padding-top:20px;
+	padding-left:11px;
+	padding-right:11px;
+	padding-bottom:36px;
+	margin-left:50px;
+	float:left;
+	
+}

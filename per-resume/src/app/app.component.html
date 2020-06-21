@@ -1,0 +1,85 @@
+ <div id="section-topbar">
+    <div id="topbar-inner">
+      <div class="container">
+        <div class="row">
+          <div class="dropdown">
+            <ul id="nav" class="nav">
+              <li class="menu-item "><a class="smothscroll" href="#about" title="About"><i class="fa fa-user"></i></a></li>
+              <li class="menu-item"><a class="smothscroll" href="#resume" title="Resume"><i class="fa fa-file-text-o"></i></a></li>
+              <li class="menu-item"><a class="smothscroll" href="#work" title="Works"><i class="fa fa-briefcase"></i></a></li>
+              <li class="menu-item"><a class="smothscroll" href="#contact" title="Contact"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+            <!--/ uL#nav -->
+          </div>
+          <!-- /.dropdown -->
+
+          <div class="clear"></div>
+        </div>
+        <!--/.row -->
+      </div>
+      <!--/.container -->
+
+      <div class="clear"></div>
+    </div>
+    <!--/ #topbar-inner -->
+  </div>
+  <!--/ #section-topbar -->
+
+  <app-home [profiledata]="profiledata"></app-home>
+  <!--/.#headerwrap -->
+
+
+  <section id="about" name="about">
+    <app-about [profiledata]="profiledata"></app-about>
+  </section>
+
+   <div class="container desc">
+      <app-work></app-work>
+  </div>
+
+  <section id="resume" name="resume">
+    <!--EDUCATION DESCRIPTION -->
+      <app-education [educationdata]="educationdata"></app-education>
+    <!--/.container -->
+  </section>
+
+
+  <!--WORK DESCRIPTION -->
+ 
+  <!--/.container -->
+
+
+  <!--AWARDS DESCRIPTION -->
+  <div class="container desc">
+    <app-awards></app-awards>
+  </div>
+  <!--/.container -->
+
+
+  <!--SKILLS DESCRIPTION -->
+  <app-skill></app-skill>
+  <!--/ #skillswrap -->
+
+
+
+  <section id="work" name="work">
+    <!--PORTFOLIO DESCRIPTION -->
+    <app-projects style="display: none;"></app-projects>
+    <!--/.container -->
+  </section>
+
+  <section id="contact" name="contact">
+    <!--FOOTER DESCRIPTION -->
+      <app-contact [profiledata]="profiledata"></app-contact>
+    <!--/ #footer -->
+  </section>
+
+  <div id="copyrights">
+    <div class="container">
+      <p>
+        &copy; Copyrights <strong>HeminS</strong>. All Rights Reserved
+      </p>
+      <div class="credits">
+      </div>
+    </div>
+  </div>

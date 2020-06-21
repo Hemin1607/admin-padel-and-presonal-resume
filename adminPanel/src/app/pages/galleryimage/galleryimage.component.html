@@ -1,0 +1,60 @@
+<div class=" content">
+	<div class=" row">
+		<div class=" col-md-12">
+		  <div class=" card">
+		    <div class=" card-header"><h5 class=" title">Image Gallery</h5></div>
+		    <div class=" card-body">
+		    	<form [formGroup]="profileFormGroup"> 
+					<div class=" row">
+		    			<div class=" col-md-4 pr-md-1">
+		    				<div class=" form-group">
+				              <label> Title </label>
+				              <input
+				              class=" form-control"
+				              formControlName="title"
+		                	  [ngClass]="{ 'border-error-input' : submitted && f.title.errors && f.title.errors.required}"
+				              />
+		    				</div>
+		    			</div>
+		    			<div class=" col-md-4 pr-md-1">
+		    				<div class="">
+				              <label> Image </label>
+				              <input
+				              type="file"
+				              class=" form-control"
+				              (change)="onFileChange($event)"
+				              />
+		    				</div>
+		    			</div>
+		    			<div class=" col-md-4 pr-md-1">
+		    				<div class="form-group">
+				              <button type="submit" (click)="saveData($event)" class=" btn btn-fill btn-danger cust-btn-save">Save</button>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</form>
+			</div>
+			<div class=" card-footer">
+				
+		    </div>
+		  </div>
+	    </div>
+	    <div class=" col-md-12">
+		  <div class=" card">
+		    <div class=" card-header"><h5 class=" title">Image Gallery</h5></div>
+		    <div class=" card-body">
+				<ul class="works" *ngFor="let imgdata of imageData let i = index">
+		            <li><img src="{{imgroot}}/{{imgdata.profilepic}}" alt="" (click)="open(i)" />
+		            	<div><button  class="btn btn-danger" (click)="deleteiamge(imgdata)"><i class=" tim-icons icon-trash-simple"> </i></button></div>
+		            </li>
+		        </ul>
+			</div>
+			<div class=" card-footer">
+				
+		    </div>
+		  </div>
+	    </div>
+	</div>
+</div>
+		
+	

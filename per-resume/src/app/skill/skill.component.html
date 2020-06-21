@@ -1,0 +1,18 @@
+<div id="skillswrap">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2 col-lg-offset-1">
+          <h5>SKILLS</h5>
+        </div>
+        
+        <div  *ngFor="let skill of skilldata; let i = index">
+          <div  [ngClass]="{'col-lg-offset-3' : i != 0}">
+           <ngb-progressbar type="dark"  [value]="skill.skillsper">{{skill.skillname}}</ngb-progressbar>
+          </div>
+        </div>
+      </div>
+      <!--/.row -->
+      <br>
+    </div>
+    <!--/.container -->
+  </div>

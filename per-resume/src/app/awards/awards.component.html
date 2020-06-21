@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-lg-2 col-lg-offset-1">
+    <h5>Other Achievement</h5>
+  </div>
+  <div *ngFor="let achivdata of achievementdata; let i = index">
+    <div class="col-lg-6 " [ngClass]="{'col-lg-offset-3' : i != 0}">
+      <p>
+        <span class="tdesc"> {{achivdata.title}}</span>
+      </p>
+      <p [innerHTML]="achivdata.about">
+      </p>
+    </div>
+    <div class="col-lg-3">
+      <p >
+        {{achivdata.yearmonth}}
+      </p>
+    </div>
+  </div>
+</div>
+  <!--/.row -->
+<br>
